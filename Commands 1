@@ -1,0 +1,5 @@
+systemctl start jenkins
+  This command start the jenkins.
+  
+systemctl status jenkins
+  This command show's the jenkins status ie, Whether its running or not.
