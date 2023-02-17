@@ -1,0 +1,59 @@
+Step 1: Update and upgrade your system by running
+
+    sudo apt update
+    sudo apt upgrade
+
+Step 2: Now import GPG keys to your system
+
+     curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+     
+Step 3: Add the Jenkins repository to the sources list once the GPG key has been imported.
+
+     echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+     https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+     /etc/apt/sources.list.d/jenkins.list > /dev/null
+     
+Step 4: Once again update your system.
+
+    sudo apt update
+    
+Step 5: Finally, install Jenkins by running the following command. 
+
+    sudo apt install jenkins
+    
+Step 6: Now, start the Jenkins server by using systemctl command.
+
+    sudo systemctl start jenkins
+
+    sudo systemctl status jenkins
+    
+Step 7: Now enable the system firewall and open port 8080 to access the Jenkins server.
+
+    sudo ufw enable
+      if you get error(ie "ufw command not found") then, run
+        sudo apt-get install ufw
+
+    sudo ufw allow 8080
+    
+Step 8: Verify the changes by running
+
+    sudo ufw status
+    
+Step 9: Start configuring Jenkins by navigating to http://localhost:8080.
+        Unlock the admin privileges by entering the default password created during the installation. 
+        get password by entering
+            sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+            
+Step 10: Create a new account by entering a username, password, and email address.
+
+Step 11: Select Install suggested plugins and wait till all the plugins are successfully downloaded and installed on your machine.
+
+Step 12: At this point, Jenkins has been successfully installed and configured on your Debian machine.
+
+==========================================================================================================================================================
+Uninstallation of Jenkins
+
+To uninstall Jenkins and all of its config files run
+
+sudo apt remove jenkins
