@@ -1,3 +1,6 @@
+Prerequisite:
+    sudo apt install openjdk-11-jdk
+================================================================================================================================================================
 Step 1: Update and upgrade your system by running
 
     sudo apt update
