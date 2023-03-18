@@ -1,0 +1,22 @@
+Steps to create and build a simple job.
+
+Step 1: Create a New Freestyle Project
+
+1. Click the New Item link on the left-hand side of the Jenkins dashboard.
+2. Enter the new project's name in the Enter an item name field and select the Freestyle project type. Click OK to continue.
+3. Under the General tab, add a project description in the Description field.
+
+Step 2: Add a Build Step
+
+1. Scroll down to the Build section.
+2. Open the Add build step drop-down menu and select Execute Windows batch command.
+3. Enter the commands you want to execute in the Command field. For this tutorial, we are using a simple set of commands that display the current version 
+of Java and Jenkins working director.
+4. Click the Save button to save changes to the project.
+
+Step 3: Build the Project
+
+1. Click the Build Now link on the left-hand side of the new project page.
+2. Click the link to the latest project build in the Build History section.
+3. Click the Console Output link on the left-hand side to display the output for the commands you entered.
+4. The console output indicates that Jenkins is successfully executing the commands, displaying the current version of Java and Jenkins working directory.
