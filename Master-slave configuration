@@ -1,0 +1,50 @@
+Prerequisite:
+    Java version 8 or above shoud be installed both master and slave.
+    
+Master:
+    Step 1: click create node 
+    step 2: configure node:
+            Name: enter the name for your agent
+            Desc: add desc of your node
+            no of executor: This tell's how many job a agent can run paralel
+            Now fill the fields:
+              Remote root directory; (e.g.: /home/jenkins )
+              label; (e.g.: agent1 )
+              usage; (e.g.: only build jobs with label expression…​)
+              Launch method; (e.g.: Launch agents by SSH )
+              Host; (e.g.: localhost or your IP address )
+              Credentials; (e.g.: jenkins )
+              Host Key verification Strategy; (e.g.: Manually trusted key verification …​ )
+   step 3: Press the Save button and the agent1 will be registered, but offline for the time being. Click on it.
+   step 4: You should now see This node is being launched.. If that’s not the case, you can now press the Relaunch agent button and wait a few seconds. 
+           You can now click on the Log button on the left, then you should receive the message: Agent successfully connected and online on the last log line.
+   
+   
+   
+   
+Slave:
+    Step 1: Setup ssh connection in slave machine.
+            ssh start
+    step 2: Create user in slave machine 
+            sudo useradd -s /bin/bash -d /home/jenkins -m username
+            su passwd userame
+              this command is used to set the password for the new user
+
+    step 3: Switch to the new user.
+            su username
+    step 4: Create ssh key
+            If ssh is not enabled or not installed,then
+                 sudo apt-get install openssh-server
+                 sudo systemctl enable ssh
+                 sudo systemctl start ssh
+            ssh-keygen
+              this command create a ssh key.
+            sudo ls /~/.ssh/ (or) sudo ls /root/.ssh 
+              This command show the generated keys
+                id_rsa- is a private key , id_rsa.pub - is a public key
+    step 5: making the created shh key as a valid one.
+            cd ~/.ssh/
+            cat id_rsa.pub
+              Add this key as a authoried key
+              so, 
+                cat id_rsa.pub > authorized_keys
