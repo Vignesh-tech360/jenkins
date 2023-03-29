@@ -24,7 +24,8 @@ Master:
    
 Slave:
     Step 1: Setup ssh connection in slave machine.
-            ssh start
+             sudo systemctl is-enabled ssh
+             sudo systemctl enable ssh
     step 2: Create user in slave machine 
             sudo useradd -s /bin/bash -d /home/jenkins -m username
             su passwd userame
