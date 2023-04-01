@@ -1,0 +1,25 @@
+There are two types of jenkins pipeline syntax:
+    i,  scriptive pipeline syntax
+    ii, declaritive pipeline syntax
+    
+   Some addition features available only for declarative they are
+        restart from stage
+    
+Scriptive pipeline Syntax:
+    node{
+        stage("hello"){
+          sh 'echo "hello world"'
+          }
+        }
+   
+declaritive pipeline syntax:
+    pipeline{
+        agent any
+          stages{
+            stage("hello"){
+              steps{
+                  sh 'echo"hello world"'
+            }
+        }
+     }
+ }            
